@@ -1,0 +1,19 @@
+{% extends 'base_cust.html' %}
+{% block content %}
+<div class="container">
+
+
+
+    {% for post in assignment_list %}
+    <div class="card m-3">
+        <div class="card-body">
+            <h2 class="card-title"> {{post.name}} </h2>
+            <p class="card-text">{{post.email}}</p>
+            <p class="card-text">Reference: {{post.reference}}</p>
+            
+            <a href="{%url 'detail_view' post.slug%}" class="btn btn-primary">Read more</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}
